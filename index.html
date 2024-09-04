@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPD Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGLpuDsXyK3prGYgAeFCal8x0Dalo7FZ0&libraries=places"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Careसेतु
+            <h2>Appointment</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Hospitals</a></li>
+            <li><a href="#"id="manageQueueLink">Manage Queue</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="section" id="section1">
+            <h2>Search Hospital</h2>
+            <input type="text" id="hospitalSearch" placeholder="Enter hospital name">
+            <button id="useLocation">Use Current Location</button>
+            <ul id="hospitalList"></ul>
+        </div>
+        <div class="section inactive" id="section2">
+            <h2>Select Department/OPD</h2>
+            <button id="backToHospital">Back</button>
+            <ul id="opdList"></ul>
+        </div>
+        <div class="section inactive" id="section3">
+            <h2>Select Doctor</h2>
+            <button id="backToOPD">Back</button>
+            <ul id="doctorList"></ul>
+        </div>
+    </div>
+<div id="slotSelectionModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h3>Select a Time Slot</h3>
+        <ul id="timeSlotList"></ul>
+    </div>
+</div>
+<div id="manageQueueModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeManageQueueModal">&times;</span>
+        <h3>Your Current Booking</h3>
+        <div id="queueDetails"></div>
+        <button id="deleteBookingButton">Delete Booking</button>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
